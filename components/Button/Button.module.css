@@ -1,7 +1,8 @@
 
 .plate {
-  background-color: aliceblue;
+  background-color: red;
   border-radius: 50%;
+  border: 2px solid white;
   height: 100px;
   width: 100px;
   display: flex;
@@ -26,4 +27,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
+    padding: 4px;
 }

@@ -11,14 +11,14 @@ export default function App() {
   const [convertedWeight, setConvertedWeight] = useState();
   const [check, setCheck] = useState(false);
 
-  function convertWeight() {
+  function convertWeight(e) {
     //0 = kg 1 = lbs
     if (!check) {
-      setWeight(weight);
+      setWeight(e.target.checked);
       setConvertedWeight(weight / 0.453592);
     } else {
       setWeight(convertedWeight * 0.453592);
-      setConvertedWeight(setConvertedWeight);
+      setConvertedWeight(e.target.checked);
     }
   }
 
