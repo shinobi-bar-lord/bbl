@@ -1,0 +1,50 @@
+.plate {
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 15vh;
+  width: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85px;
+}
+
+.middle > button {
+  border-style: none;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0;
+  flex: 1;
+}
+
+.inner {
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.header {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}

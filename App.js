@@ -3,22 +3,32 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
 import { useState } from 'react';
-import PlateButton from './components/Button/Buttons';
+import PlateButton from './components/Button/Button';
 import Switch from './components/Switch/Switch';
 
 export default function App() {
-  const [weight, setWeight] = useState();
-  const [convertedWeight, setConvertedWeight] = useState();
+  const [kilos, setKilos] = useState();
+  const [lbs, setLbs] = useState();
   const [check, setCheck] = useState(false);
 
-  function convertWeight(e) {
-    //0 = kg 1 = lbs
-    if (!check) {
-      setWeight(e.target.checked);
-      setConvertedWeight(weight / 0.453592);
+  function convertWeight(val) {
+
+    if (val == undefined) {
+      setKilos('XXX');
+      setLbs('XXX');
+
     } else {
-      setWeight(convertedWeight * 0.453592);
-      setConvertedWeight(e.target.checked);
+
+        //0 = kg 1 = lbs
+      if (check == false) {
+        setKilos(val);
+        setLbs((val / 0.453592).toFixed(0));
+        
+      } else {
+        setKilos((val * 0.453592).toFixed(0));
+        setLbs(val);
+
+      }
     }
   }
 
@@ -31,8 +41,8 @@ export default function App() {
     <View style={styles.container}>
       {/* <Switch onChange={handleSwitch()} /> */}
 
-      <Text style={styles.text}>You weigh {weight} kgs</Text>
-      <Text style={styles.text}>You weigh {convertedWeight} lbs</Text>
+      <Text style={styles.text}>You weigh {kilos} kgs</Text>
+      <Text style={styles.text}>You weigh {lbs} lbs</Text>
       <input onChange={(e) => convertWeight(e.target.value)} />
 
       <PlateButton />
